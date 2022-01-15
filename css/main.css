@@ -1,0 +1,7 @@
+#alert{
+    background-color: azure;
+    color: rgb(44, 151, 155);
+    font-size: 30px;
+    border-radius: 5px;
+    display: none;
+}
