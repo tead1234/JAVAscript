@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
+    <div><button type="button" onclick="open11()">X</button></div>
+    <div><button type="button" onclick="close1()">O</button></div>
     <div id='alert'>이게 왜 오류가 나는거야</div>
-    <div><button type="button" onclick="open()">X</button></div>
+    
     
     
     <script>
-        function open(){
+        // 내장함수가 이름이 어떻게 open
+        function open11(){
             document.getElementById('alert').style.display = 'block';
+        }
+        function close1(){
+            document.getElementById("alert").style.display = "none";
         }
         
         
