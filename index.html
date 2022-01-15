@@ -8,21 +8,39 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <div><button type="button" onclick="open11()">X</button></div>
-    <div><button type="button" onclick="close1()">O</button></div>
-    <div id='alert'>이게 왜 오류가 나는거야</div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <div><button type="button" onclick="open11('아이디 입력해라')">O</button></div>
+    <div><button type="button" onclick="open11('비밀번호 입력해라')">X</button></div>
+    <div id='alert'>아이디 입력하세요
+        
+    </div>
+    <button class="close" id="close"> 닫기</button>
     
-    
-    
+    <div id = "test">테스트</div>
+    <button class="btn">버튼</button>
+    <button class="btn">버튼</button>
+    <button class="btn">버튼</button>
+
     <script>
         // 내장함수가 이름이 어떻게 open
-        function open11(){
+        // class명으로 찾을떈 뒤에 [] 순서를 입력해야함 반드시
+        // 자바 스크립트는 " ' 구분 x 근데 html은 이거 구분함 주의
+        // jquery에서 클래스명과 id는 css처럼 따옴
+        function open11(a){
+            document.getElementById("alert").innerHTML = a;
             document.getElementById('alert').style.display = 'block';
         }
-        function close1(){
-            document.getElementById("alert").style.display = "none";
-        }
-        
+        document.getElementsByClassName('close')[0].addEventListener("click", function(){
+           document.getElementById("alert").style.display = "none"; 
+        });
+        $("#test").html("HI");
+        $("#test").css("color", "red");
+        $("#test").attr("class","yellow-bg");
+        // 얘도 "" '' 차이가 없구나..
+        // attr 속성, 값
+        $(".btn").on("click",function(){
+            document.getElementById("alert").style.fontSize= "100px";
+        });
         
         
     </script>
