@@ -14,6 +14,9 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    <div class="left-menu">
+      <h2>MENU</h2>
+    </div> 
     <div class="background-black">
         <div class="background-white">
             <p>로그인 하세요</p>
@@ -22,10 +25,10 @@
                 <input type="email" class="form-control" placeholder="Email" id="email-form">
               </div>
               <div class="form-group">
-                <input type="password" class="form-control" placeholder="Password">
+                <input type="password" class="form-control" placeholder="Password" id="password_form">
               </div>
               <button type="submit" class="btn btn-primary">전송</button>
-              <button id="close-modal" style=" position:absolute; top: 50%; border-radius: 5px; background-color: blueviolet; color: white; right: 40%;">닫기</button>
+              <button type="submit" class="btn btn-danger" id="close-modal">닫기</button>
             </form>
           </div>  
     </div>
@@ -45,13 +48,16 @@
         <hr class="my-4">
         <p>인모드 사주세요 제발 월가 개객끼들아</p>
         <a id="btn" class="btn btn-primary btn-lg" href="#" role="button">Buy INMD</a>
+        <a id="btn2" class="btn btn-danger btn-lg" href="#" role="button">Show MENU</a>
       </div>
-      <div id="dasd"></div>
       
+     
     <script>
+        $('#btn2').click(function(){
+          $(".left-menu").animate({marginLeft: "0px"}, 1000);
+        })
         $('#btn').on('click',function(){
-          
-            $('.background-black').fadeIn();
+            $('.background-black').animate({marginTop: "0%"})
         });
         $('#sub-btn').click(function(){
           $('.nav-sub').slideToggle();
@@ -65,7 +71,19 @@
             e.preventDefault();
             alert("이메일없음");
           }
+       
+       
+          if ($("#password-form").val() == ""){
+            e.preventDefault();
+            alert("이메일없음");
+          }
+          
+          // let, const은 재선언이 불가능함 const는 한술더 떠서 재할당 불가능 {}범위안에서만 살아남음 var는 function전체
+         
+
        });
+
+       
 
 
     </script>
