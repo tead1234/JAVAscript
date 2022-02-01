@@ -57,7 +57,10 @@
           $(".left-menu").animate({marginLeft: "0px"}, 1000);
         })
         $('#btn').on('click',function(){
-            $('.background-black').animate({marginTop: "0%"})
+          $('.background-black').addClass('slide_menu');
+          // $('.background-black').css('transform', 'translateY(0px)');
+            // $('.background-black').show().animate({marginTop: "0%"})
+            // jQuery에서 연속 함수동작을 설정할 수 있음 근데 요새는 jqurey로 잘 안만듬
         });
         $('#sub-btn').click(function(){
           $('.nav-sub').slideToggle();

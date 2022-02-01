@@ -25,7 +25,8 @@
     width: 100%;
     height: 600px;
     display: block;
-    margin-top: -600px;
+    transition: all 1s;
+    transform: translateY(-700px);
 }
 .background-white{
     background-color: white;
@@ -51,4 +52,7 @@
     color: white;
     position: fixed;
     margin-left: -100px;
+}
+.slide_menu{
+    transform: translateY(0px);
 }
