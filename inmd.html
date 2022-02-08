@@ -74,6 +74,12 @@
         if (/\S+@\S+\.\S+/.test(input_email) == false){
               e.preventDefault();
               
+        }
+        $('.login_form').on("submit", function(e){
+          var input_password = $('password-form').val()
+        if (/\S+@\S+\.\S+/.test(input_password) == false){
+              e.preventDefault();
+              
         }     
         // if ($("#email-form").val() == ""){
           //   e.preventDefault();
