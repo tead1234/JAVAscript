@@ -70,17 +70,21 @@
           $('.background-black').fadeToggle();
         });
        $('.login_form').on("submit", function(e){
-          var input_email = $('email-form').val()
+        var input_password = $('#password-form').val()
+          var input_email = $('#email-form').val();
         if (/\S+@\S+\.\S+/.test(input_email) == false){
               e.preventDefault();
-              
+        }else if (input_email == ''){
+          e.preventDefault();
         }
-        $('.login_form').on("submit", function(e){
-          var input_password = $('password-form').val()
-        if (/\S+@\S+\.\S+/.test(input_password) == false){
+        if (/[A-Z]+/.test(input_password) == false){
               e.preventDefault();
               
-        }     
+              
+        }
+       });
+        
+              
         // if ($("#email-form").val() == ""){
           //   e.preventDefault();
           //   alert("이메일없음");
@@ -91,7 +95,6 @@
           //   e.preventDefault();
           //   alert("이메일없음");
           // }
-        });
           // let, const은 재선언이 불가능함 const는 한술더 떠서 재할당 불가능 {}범위안에서만 살아남음 var는 function전체
       //  
             // /[A-z]/.test('dfasf')
