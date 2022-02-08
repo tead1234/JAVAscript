@@ -56,3 +56,14 @@
 .slide_menu{
     transform: translateY(0px);
 }
+.slide-container{
+    width: 300vw;
+    transition: transform 1s;
+}
+.slide-box{
+    float: left;
+    width: 100vw;
+}
+.slide-box img{
+    width: 100%;
+}

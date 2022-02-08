@@ -46,12 +46,28 @@
         <h1 class="display-4">인모드는 살아있다!!</h1>
         <p class="lead">내 인생을 걸어볼 주식 인모드!!</p>
         <hr class="my-4">
-        <p>인모드 사주세요 제발 월가 개객끼들아</p>
+        <p>인모드 사주세요 제발</p>
         <a id="btn" class="btn btn-primary btn-lg" href="#" role="button">Buy INMD</a>
         <a id="btn2" class="btn btn-danger btn-lg" href="#" role="button">Show MENU</a>
       </div>
-      
-     
+
+    <div style="overflow: hidden;">
+     <div class="slide-container">
+       <div class="slide-box">
+         <img src="img/inmd.jpg">
+       </div>
+       <div class="slide-box">
+        <img src="img/inmd2.png">
+      </div>
+      <div class="slide-box">
+        <img src="img/inmd3.png">
+      </div>
+      </div> 
+    </div>
+      <button class="button-1">1</button>
+      <button class="button-2">2</button>
+      <button class="button-3">3</button>
+
     <script>
         $('#btn2').click(function(){
           $(".left-menu").animate({marginLeft: "0px"}, 1000);
@@ -83,6 +99,13 @@
               
         }
        });
+       //  윗부분은 로그인창 체크 기능
+       // 여기부터는 버튼 기능
+
+       $('.button-2').click(function(){
+            $('.slide-container').css('transform', 'translateX(-100vw)');
+            var slider = $('.slide-container').css('transition', 'all ls');
+        });
         
               
         // if ($("#email-form").val() == ""){
