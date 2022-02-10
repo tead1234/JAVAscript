@@ -67,3 +67,9 @@
 .slide-box img{
     width: 100%;
 }
+.Next{
+    position: absolute;
+    top : 95%;
+    left: 95%;
+    
+}

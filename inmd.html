@@ -51,7 +51,7 @@
         <a id="btn2" class="btn btn-danger btn-lg" href="#" role="button">Show MENU</a>
       </div>
 
-    <div style="overflow: hidden;">
+    <div style="overflow: hidden; position: relative;">
      <div class="slide-container">
        <div class="slide-box">
          <img src="img/inmd.jpg">
@@ -62,7 +62,8 @@
       <div class="slide-box">
         <img src="img/inmd3.png">
       </div>
-      </div> 
+      </div>
+      <button class="Next">NEXT</button> 
     </div>
       <button class="button-1">1</button>
       <button class="button-2">2</button>
@@ -101,12 +102,34 @@
        });
        //  윗부분은 로그인창 체크 기능
        // 여기부터는 버튼 기능
+       var present_img = 1;
+       $('.Next').click(function(){
+         if (present_img == 1){ present_img +=1;  $('.slide-container').css('transform', 'translateX(-100vw)');
+}
+        else if (present_img ==2){
+          present_img = 0
+          $('.slide-container').css('transform', 'translateX(-200vw)');
+        }
+        else {
+          present_img += 1
+          $('.slide-container').css('transform', 'translateX(0vw)');
+          
+        }
+       });
+
+       $('.button-1').click(function(){
+            $('.slide-container').css('transform', 'translateX(0vw)');
+            var slider = $('.slide-container').css('transition', 'all ls');
+        });
 
        $('.button-2').click(function(){
             $('.slide-container').css('transform', 'translateX(-100vw)');
             var slider = $('.slide-container').css('transition', 'all ls');
         });
-        
+        $('.button-3').click(function(){
+            $('.slide-container').css('transform', 'translateX(-200vw)');
+            var slider = $('.slide-container').css('transition', 'all ls');
+        });
               
         // if ($("#email-form").val() == ""){
           //   e.preventDefault();
