@@ -63,8 +63,11 @@
         <img src="img/inmd3.png">
       </div>
       </div>
-      <button class="Next">NEXT</button> 
-    </div>
+      <div class="Button-Box">
+        <button class="Before">BEFORE</button>
+        <button class="Next">NEXT</button>   
+      </div>
+      </div>
       <button class="button-1">1</button>
       <button class="button-2">2</button>
       <button class="button-3">3</button>
@@ -105,16 +108,21 @@
        var present_img = 1;
        $('.Next').click(function(){
          if (present_img == 1){ present_img +=1;  $('.slide-container').css('transform', 'translateX(-100vw)');
-}
+          }
         else if (present_img ==2){
-          present_img = 0
+          present_img = 3
           $('.slide-container').css('transform', 'translateX(-200vw)');
         }
         else {
-          present_img += 1
+          present_img =1
           $('.slide-container').css('transform', 'translateX(0vw)');
           
         }
+       });
+      
+       $('.Before').click(function(){
+         if (1<present_img ){ $('.slide-container').css('transform', 'translateX(+100vw)');
+          }
        });
 
        $('.button-1').click(function(){
