@@ -13,9 +13,16 @@ var numItems = $('.tab-button').length
 // 요즘은 let이라는 변수를 쓰기만 하면 버그가 전혀 없으니 깊게 이해안하셔도 상관없습니다.  
 for(let i=0; i < numItems; i ++){
     $('.tab-button').eq(i).click(function(){
-        $('.tab-button').removeClass('active');
+        open_tab(i);
+});
+}
+
+$('list').click(function(e){
+    open_tab(e.target.dataset.id)
+})
+function open_tab(i){
+    $('.tab-button').removeClass('active');
         $('.tab-content').removeClass('show');
         $('.tab-button').eq(i).addClass('active');
         $('.tab-content').eq(i).addClass('show');
-});
 }
