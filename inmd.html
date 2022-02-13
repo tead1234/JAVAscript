@@ -68,10 +68,31 @@
         <button class="Next">NEXT</button>   
       </div>
       </div>
-      <button class="button-1">1</button>
-      <button class="button-2">2</button>
-      <button class="button-3">3</button>
-
+    
+    
+    
+    <div class="container mt-5">
+      <ul class="list">
+        <li class="tab-button">Products</li>
+        <li class="tab-button active">Information</li>
+        <li class="tab-button">Shipping</li>
+        <li class="tab-button">Tax</li>
+      </ul>
+    
+      <div class="tab-content">
+        <p>상품설명입니다. Product</p>
+      </div>
+      <div class="tab-content show">
+        <p>상품정보입니다. Info</p>
+      </div>
+      <div class="tab-content">
+        <p>배송정보입니다. Shipping</p>
+      </div>
+      <div class="tab-content">
+        <p>세금정보입니다. Tax</p>
+      </div>
+    </div>
+    <script src="JS/tap.js"></script>
     <script>
         $('#btn2').click(function(){
           $(".left-menu").animate({marginLeft: "0px"}, 1000);
@@ -153,10 +174,18 @@
       //  
             // /[A-z]/.test('dfasf')
             // /\S+@\S+\.\S+/.test('dfasf@damd.com')
-          
-
-       
-
+        
+    // 스크롤바를 내리면 이미지 색이 바뀌게 window는 ''안찍고 움직이네
+    $(window).on('scroll',function(){
+      if($(window).scrollTop() > 100){
+        $('.nav-menu').css('background-color','white');
+        $('.nav-menu').css('font-size','5px');
+        
+      }else{
+        $('.nav-menu').css('background-color','transparent');
+        $('.nav-menu').css('font-size','20px');
+      }
+    });
 
     </script>
     
