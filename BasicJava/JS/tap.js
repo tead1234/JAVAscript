@@ -26,3 +26,36 @@ function open_tab(i){
         $('.tab-button').eq(i).addClass('active');
         $('.tab-content').eq(i).addClass('show');
 }
+function getLocation() {
+    if (navigator.geolocation) { // GPS를 지원하면
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var my_location = [position.coords.latitude, position.coords.longitude];
+        $('.location').html(my_location[0]);
+      }, function(error) {
+        console.error(error);
+      }, {
+        enableHighAccuracy: false,
+        maximumAge: 0,
+        timeout: Infinity
+      });
+    } else {
+      alert('GPS를 지원하지 않습니다');
+    }
+  }
+getLocation();
+var xhr = new XMLHttpRequest();
+var url = 'http://api.data.go.kr/openapi/tn_pubr_public_traffic_light_api'; /*URL*/
+var queryParams = '?' + encodeURIComponent('serviceKey') + '='+'hFv6v8mxbGG4c5TIwfG/wYNVgHDJz61zqizx9iuW2VJeqBQqHbg28JUK+XMpb69vPpU6X+xIrbQMPk7eGUqp8w=='; /*Service Key*/
+queryParams += '&' + encodeURIComponent('latitude') + '=' + encodeURIComponent(''); /**/
+queryParams += '&' + encodeURIComponent('longitude') + '=' + encodeURIComponent(''); /**/
+queryParams += '&' + encodeURIComponent('tfclghtColorKnd') + '=' + encodeURIComponent(''); /**/
+queryParams += '&' + encodeURIComponent('sgnaspTime') + '=' + encodeURIComponent(''); /**/
+
+xhr.open('GET', url + queryParams);
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4) {
+        alert('Status: '+this.status+'nHeaders: '+JSON.stringify(this.getAllResponseHeaders())+'nBody: '+this.responseText);
+    }
+};
+
+xhr.send();
