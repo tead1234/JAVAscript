@@ -17,18 +17,16 @@ const products = [
 ]
 /// 카드 구현 완료
 for(let i=0; i< products.length; i++){
-    let templete = `<div class="card" style="width: 18rem;">
-<img src="img/retriver.jpg" class="card-img-top" alt="...">
-<div class="card-body">
-  <h5 class="card-title">${products[i].title}</h5>
-  <p class="card-text">${products[i].price}</p>
-  <a href="#" class="btn btn-primary">주문하기</a>
-</div>
-</div>`
-$('.card_nav').append(templete);
+    let templete = `<div class="col-sm-4">
+    <img src="https://via.placeholder.com/600" class="w-100">
+    <h5>${products[i].title}</h5>
+    <p>가격 : ${products[i].price}</p>
+  </div>`
+  
+$('.row').append(templete);
 };
 // 정렬 버튼 구현
-$('#lowPriceSort').onClick(()=>{
+$('#lowPriceSort').click(function(){
     products.sort(function(a,b){
         return a.price - b.price;
     })
@@ -44,4 +42,11 @@ $('#lowPriceSort').onClick(()=>{
 $('.card_nav').append(templete);
 };
 }
-);
+)
+$('#send_server').click(()=>{
+    $.get("https://codingapple1.github.io/price.json").done(function(e){
+        
+    }).fail(function(){
+        console.log("실패");
+    })
+});
