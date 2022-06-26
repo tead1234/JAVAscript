@@ -14,3 +14,10 @@ $('#option1').on('change', function(){
         $("#option2").append(options_pants);
     }
 })
+function 목표량계산기(arr, value){
+    let sum = 0;
+    for(let i=0; i < 5; i++){
+        sum +=arr[i];
+    }
+    console.log(sum);
+}
