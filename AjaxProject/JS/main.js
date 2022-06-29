@@ -1,22 +1,18 @@
 
-const options = [90,95,100,105];
-var size_pants = [80,82,84,86,88];
-//array foreach array[i] 이게 아니라 array.foreach(fun(i){}); 콜백 반복문으로 바꿈
-// arrow를 쓰면 this값이 달라짐 ex function으로 함수속에서 쓰면 this가 재정의 arrow는 재정의 x
-$('#option1').on('change', function(){
-    if ($('#option1').val() == "셔츠"){
-        $("#option2").html("");
-        options.forEach(function(e){
-            let shirt_option = `<option>${e}</option>`
-            $("#option2").append(shirt_option);
-        })
+
+$.getJSON({
+    type: "GET",
+    url: "https://naveropenapi.apigw.ntruss.com/map-direction-15/v1/driving?start=127.1058342,37.359708&goal=129.075986,35.179470&option=trafast"
+	,
+    Headers: {"X-NCP-APIGW-API-KEY-ID": "n7gct2pkrc"} ,
+    Headers: {"X-NCP-APIGW-API-KEY": "CtR3a3U3TWNORK4VQmKipTQM20SbAHKXd9hW88CS"},
+    dataType: "json",
+    data: JSON.stringify(requestData),
+    success: function(resultData) {
+        console.log("성공")
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+        // 에러 로그는 아래처럼 확인해볼 수 있다. 
+        alert("업로드 에러\ncode : " + jqXHR.status + "\nerror message : " + jqXHR.responseText);
     }
-    else if($('#option1').val() == "바지"){
-        $("#option2").html("");
-        size_pants.forEach(function(a){
-            var options_pants = `<option>${a}</option>`
-            $("#option2").append(options_pants);
-        });
-            
-}
-})
+});
