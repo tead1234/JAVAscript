@@ -23,8 +23,7 @@ for(let i=0; i< products.length; i++){
     <h5>${products[i].title}</h5>
     <p>가격 : ${products[i].price}</p>
   </div>`
-  
-$('.row').append(templete);
+    $('.row').append(templete);
 };
 // 정렬 버튼 구현
 $('#lowPriceSort').click(function(){
@@ -45,8 +44,9 @@ $('.card_nav').append(templete);
 }
 )
 $('#send_server').click(()=>{
-    $.get("https://codingapple1.github.io/price.json").done(function(e){
-        
+    $.get("https://cors-anywhere.herokuapp.com/https://www.tournmaster.com/seantour_map/travel/beachinfo.do").done(function(e){
+        var a = JSON.stringify(e);
+        console.log(a)
     }).fail(function(){
         console.log("실패");
     })
