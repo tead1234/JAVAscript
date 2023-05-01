@@ -12,7 +12,7 @@ let input_date=[
     "2021-03-14"
 ]
 
-
+// dasd
 let star2 = function star(num) {
     let answer = ''
     for(let i = 0; i < num; i ++){

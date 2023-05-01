@@ -14,6 +14,7 @@ const products = [
         price:70000,
         title:"사랑받는 리트리버"
     }
+    // 리트리버
 ]
 /// 카드 구현 완료
 for(let i=0; i< products.length; i++){
